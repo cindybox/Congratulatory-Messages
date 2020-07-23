@@ -1,0 +1,170 @@
+:root {
+  --mainBlack: #000000;
+  --mainYellow: #f2d43a;
+  --mainWhite: #ffffff;
+  --mainBlue: #0e4ef3;
+  --mutedBlue: #1d4481;
+  --mainGrey: #464b52;
+
+  /* change this to update the base unit of rem */
+  --baseFontSize: 10px;
+  --baseFont: "Times New Roman", times, serif;
+
+  /* change the font size variable, here base unit is 10px. ex. 28px = 2.8rem */
+  --h2MinFontSize: 24px;
+  --h2FontSize: 7.2rem;
+  --h2MaxFontSize: 72px;
+
+  --h3MinFontSize: 20px;
+  --h3FontSize: 5.6rem;
+  --h3MaxFontSize: 56px;
+
+  --h5MinFontSize: 14px;
+  --h5FontSize: 2.1rem;
+  --h5MaxFontSize: 21px;
+
+  --buttonPaddingTop: 1.6rem;
+  --buttonPaddingLeft: 4rem;
+  --buttonFontSize: 1.6rem;
+  --buttonMinFontSize: 12px;
+
+  --arrowColor: var(--mainBlack);
+  --arrowWidth: 5.4rem;
+  --arrowMinWidth: 24px;
+  --arrowHoverOpacity: 0.6;
+
+  --letterSpacing: -0.02em;
+
+  /* page-related universal setting */
+  --pageTop: 12rem;
+  --pageSidePadding: 3vw;
+
+  /* carousel universal setting */
+  --quoteSidePaddingRegular: 13.1vw;
+  --quoteSidePaddingBlue: 8vw;
+
+  --dividerLineWidth: var(--h2FontSize);
+  --dividerLineSize: 2px;
+  --dividerLineColor: var(--mainBlack);
+
+  /* message page universal css variable */
+  --messagePageSidePadding: 10%;
+}
+
+html {
+  font-size: 10px !important;
+  color: var(--mainBlack);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: relative;
+  height: 100%;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: var(--baseFont);
+  font-weight: normal;
+  margin: 0;
+  letter-spacing: var(--letterSpacing);
+}
+
+h2 {
+  font-size: 7.2rem !important;
+  line-height: 111% !important;
+}
+
+h3 {
+  font-size: 5.6rem !important;
+  line-height: 114% !important;
+}
+
+h4 {
+  font-size: 3rem !important;
+  line-height: 110% !important;
+}
+h5 {
+  font-size: var(--h5FontSize) !important;
+  line-height: 190% !important;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1.8rem !important;
+  line-height: 110% !important;
+}
+
+.blue-text {
+  color: var(--mainBlue) !important;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.page {
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  z-index: -1;
+  max-width: 32vw;
+}
+
+.imageTop {
+  position: absolute;
+  top: 1.69%;
+  right: 0;
+}
+
+.imageBottom {
+  left: 0;
+  position: absolute;
+  bottom: 1.69%;
+}
+
+@media (max-width: 500px) {
+  button {
+    height: calc(5rem + 12px) !important;
+  }
+
+  .quote-container h2 {
+    padding: 0.4em 10vw 0.6em 10vw !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: max(2.6px, 0.83vw) !important;
+  }
+  h2 {
+    font-size: max(var(--h2MinFontSize), var(--h2FontSize)) !important;
+  }
+  h3 {
+    font-size: max(var(--h3MinFontSize), var(--h3FontSize)) !important;
+  }
+  p {
+    font-size: max(12px, 1.6rem) !important;
+  }
+  h5 {
+    font-size: max(14px, var(--h5FontSize)) !important;
+  }
+
+  h4 {
+    font-size: max(20px, 3rem) !important;
+  }
+  h6 {
+    font-size: max(14px, 1.8rem) !important;
+  }
+}
