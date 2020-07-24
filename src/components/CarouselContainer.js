@@ -60,12 +60,24 @@ CarouselContainer.propTypes = {
 };
 
 const CarouselStyleContainer = styled.div`
-  padding: var(--pageTop) var(--pageSidePadding) 10vw var(--pageSidePadding);
+  --dividerLineWidth: 1.2em;
+  --dividerLineSize: 2px;
+  --dividerLineColor: var(--mainBlack, black);
+  --pageSidePadding: 3vw;
+  --headlineTopPadding1: 0.8em;
+  --headlineTopPadding2: 0.6em;
+  /* rem is used here due to some default setting of the carousel npm' */
+  --arrowTop: 15rem;
+
+  /* base font is set to match p, change p font size in App.css to update font size */
+  font-size: var(--h2MinFontSize);
+  padding: var(--pageTop, 12rem) var(--pageSidePadding) 10vw
+    var(--pageSidePadding);
 
   .quote-divider {
     margin: 0 auto;
     width: var(--dividerLineWidth);
-    height: 1rem;
+    height: 1px;
     border-bottom: var(--dividerLineSize) solid var(--dividerLineColor);
   }
 
@@ -73,21 +85,22 @@ const CarouselStyleContainer = styled.div`
     outline: none;
   }
 
+  /* edit below side padding if changes are needed */
   .quote-container h2 {
     padding: ${(props) =>
       props.blueText
-        ? "calc(0.8*var(--h2FontSize)) var(--quoteSidePaddingBlue) calc(0.8*var(--h2FontSize)) var(--quoteSidePaddingBlue)"
-        : "calc(0.8*var(--h2FontSize)) var(--quoteSidePaddingRegular)calc(0.8*var(--h2FontSize)) var(--quoteSidePaddingRegular)"};
+        ? "var(--headlineTopPadding1) 8vw var(--headlineTopPadding1) 8vw"
+        : "var(--headlineTopPadding1) 13.1vw var(--headlineTopPadding1) 13.1vw"};
   }
 
   .quote-container h3 {
-    padding: calc(0.8 * var(--h2FontSize)) 8vw calc(0.6 * var(--h2FontSize)) 8vw;
+    padding: var(--headlineTopPadding1) 8vw var(--headlineTopPadding2) 8vw;
   }
 
   .slick-arrow {
     background: transparent !important;
     z-index: 2;
-    top: calc(2.5 * var(--h2FontSize));
+    top: var(--arrowTop);
   }
 
   .slick-arrow:before {
@@ -95,7 +108,8 @@ const CarouselStyleContainer = styled.div`
   }
 
   .slick-next {
-    right: max(calc(var(--arrowWidth) - 20px), 0px);
+    transform: rotate(180deg);
+    right: 0;
   }
 
   .slick-prev {
@@ -105,14 +119,38 @@ const CarouselStyleContainer = styled.div`
   .slick-dots {
     position: relative;
     bottom: 0;
-    padding-bottom: calc(0.6 * var(--h2FontSize));
+    margin-bottom: var(--headlineTopPadding2);
+    font-size: 0;
   }
 
   .slick-dots li {
     margin: 0 1rem;
   }
 
+  /* p size is used for the slick dots, change the p size */
   .slick-dots li button:before {
-    font-size: max(1.6rem, 12px);
+    font-size: var(--pMinFontSize, 12px);
+  }
+
+  @media screen and (max-width: 480px) {
+    /* reduce the side padding on smaller screen */
+    .quote-container h2 {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
+    font-size: var(--h2FontSize);
+    .slick-dots li button:before {
+      font-size: var(--pFontSize, 14px);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: var(--h2MaxFontSize);
+    .slick-dots li button:before {
+      font-size: var(--pMaxFontSize, 16px);
+    }
   }
 `;

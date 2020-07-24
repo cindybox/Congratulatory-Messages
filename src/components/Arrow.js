@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import arrowLeft from "../images/Arrow_left.svg";
-import arrowRight from "../images/Arrow_right.svg";
+import arrow from "../images/Arrow.svg";
 
 export const Arrow = (props) => {
   const { className, style, onClick, arrowDirection } = props;
@@ -13,10 +12,7 @@ export const Arrow = (props) => {
       style={{ ...style, display: "block", background: "transparent" }}
       onClick={onClick}
     >
-      <img
-        src={arrowDirection === "right" ? arrowLeft : arrowRight}
-        alt={arrowDirection === "right" ? "Next" : "Previous"}
-      />
+      <img src={arrow} />
     </ArrowContainer>
   );
 };
@@ -26,6 +22,12 @@ Arrow.propTypes = {
 };
 
 const ArrowContainer = styled.div`
+  /* edit variable values to adjust arrow appearance */
+  --arrowColor: var(--mainBlack);
+  --arrowWidth: 5.6rem;
+  --arrowMinWidth: 24px;
+  --arrowHoverOpacity: 0.6;
+
   img {
     max-width: var(--arrowWidth);
     min-width: var(--arrowMinWidth);

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 export const CardDeck = (props) => {
-  //set up media break point
+  //adjust media break point and columns here
   const breakpointColumnsObj = { default: 3, 700: 2, 500: 1 };
   return (
     <StyledCardDeck>
@@ -31,13 +31,17 @@ CardDeck.propTypes = {
 };
 
 const StyledCardDeck = styled.div`
+  /* edit variable values to adjust card deck layout */
+  --cardDeckTopOffset: 3rem;
+  --cardGap: 4rem;
+
   .mansonry-container {
-    margin-top: 3rem;
+    margin-top: var(--cardDeckTopOffset);
     display: flex;
     width: auto;
   }
   .mansonry-column {
-    padding-left: 4rem;
+    padding-left: var(--cardGap);
     background-clip: padding-box;
   }
 `;

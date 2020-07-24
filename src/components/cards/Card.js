@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export const Card = (props) => (
   <StyledCard {...props} className="card">
     <h4>{props.message}</h4>
-    <div className="card-divider" />
+    <h4 className="card-divider" />
     <h6>{props.author}</h6>
   </StyledCard>
 );
@@ -16,23 +16,30 @@ Card.propTypes = {
 };
 
 const StyledCard = styled.div`
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.1);
+  /* edit variable values to adjust card appearance*/
+  --dividerColor: var(--mainBlack, black);
+  --textGap: 3rem;
+  --cardHoverGrow: 1.1;
+  --cardBackground: rgba(255, 255, 255, 0.9);
+  --shadowColor: rgba(0, 0, 0, 0.1);
+  --textAlignment: left;
   padding: 6% 7% 10% 7%;
-  text-align: left;
-  height: auto;
-  margin: 4rem 0;
+
+  background-color: var(--cardBackground);
+  box-shadow: 3px 3px 8px 3px var(--shadowColor);
+  text-align: var(--textAlignment);
+  margin: var(--cardGap) 0;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(var(--cardHoverGrow));
     transition: transform 0.4s linear;
   }
 
   .card-divider {
     width: 100%;
-    height: 3rem;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid var(--mainBlack);
+    height: var(--textGap);
+    margin-bottom: var(--textGap);
+    border-bottom: 1px solid var(--dividerColor);
   }
 `;

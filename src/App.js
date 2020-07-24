@@ -4,6 +4,7 @@ import "./css/App.css";
 import data from "./data.json";
 import MainPage from "./pages/MainPage";
 import MessagePage from "./pages/MessagePage";
+import { PageBackground } from "./components/PageBackground";
 
 class App extends Component {
   state = { messages: [] };
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <PageBackground />
         <Switch>
           <Route
             path="/"
