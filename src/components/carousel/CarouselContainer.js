@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { Arrow } from "./Arrow";
-import { PrimaryButton } from "./buttons/PrimaryButton";
-import "../../node_modules/slick-carousel/slick/slick.css";
-import "../../node_modules/slick-carousel/slick/slick-theme.css";
+import { PrimaryButton } from "../shared/buttons/PrimaryButton";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 export const CarouselContainer = (props) => {
   const { section_title, quotes } = props.messages ? props.messages : {};

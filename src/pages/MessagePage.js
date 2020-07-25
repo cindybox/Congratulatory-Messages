@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { CardDeck } from "../components/cards/CardDeck";
-import { PrimaryButton } from "../components/buttons/PrimaryButton";
+import { PrimaryButton } from "../components/shared/buttons/PrimaryButton";
 import { Link } from "react-router-dom";
 
 const MessagePage = (props) => {

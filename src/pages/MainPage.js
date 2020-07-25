@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { CarouselContainer } from "../components/CarouselContainer";
+import { CarouselContainer } from "../components/carousel/CarouselContainer";
 
 class MainPage extends Component {
   static propTypes = {

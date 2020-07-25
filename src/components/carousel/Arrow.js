@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import arrow from "../images/Arrow.svg";
+import arrow from "../../images/Arrow.svg";
 
 export const Arrow = (props) => {
   const { className, style, onClick, arrowDirection } = props;
